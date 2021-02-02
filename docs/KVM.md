@@ -6,6 +6,10 @@ First up, you must install KVM and the Virtual Machine Manager. By installing `v
 ```bash
 sudo apt-get install -y virt-manager
 ```
+Arch/Manjaro
+``` bash
+sudo pacman -S virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables
+```
 
 ## Download the Windows Professional and KVM VirtIO drivers
 You will need Windows 10 Professional (or Enterprise or Server) to run RDP apps, Windows 10 Home will not suffice. You will also need drivers for VirtIO to ensure the best performance and lowest overhead for your system. You can download these at the following links.
@@ -183,7 +187,20 @@ Next, define a VM called RDPWindows from the sample XML file with:
 virsh define kvm/RDPWindows.xml
 virsh autostart RDPWindows
 ```
+Arch/Manjaro
+``` bash
+virsh define kvm/RDPWindowsArch.xml
+virsh autostart RDPWindows
+virsh start RDPWindows
+```
 You should then open the VMs properties in `virt-manager` and ensure that under CPU `Copy host CPU configuration` is selected.
+
+Arch/Manjaro
+
+Options -> File -> Add connection... -> Hypervisor: QEMU/KVM
+check AutoConnect
+Generated URI: qemu:///system
+Connect
 
 Boot it up, install windows, and then [Install the virtual machine](#install-the-virtual-machine).
 
@@ -196,6 +213,11 @@ sudo usermod -a -G kvm $(id -un)
 sudo usermod -a -G libvirt $(id -un)
 sudo systemctl restart libvirtd
 sudo ln -s /etc/apparmor.d/usr.sbin.libvirtd /etc/apparmor.d/disable/
+
+sleep 5
+
+sudo virsh net-autostart default
+sudo virsh net-start default
 ```
 You will likely need to reboot to ensure your current shell is added to the group.
 
