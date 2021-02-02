@@ -187,7 +187,20 @@ Next, define a VM called RDPWindows from the sample XML file with:
 virsh define kvm/RDPWindows.xml
 virsh autostart RDPWindows
 ```
+Arch/Manjaro
+``` bash
+virsh define kvm/RDPWindowsArch.xml
+virsh autostart RDPWindows
+virsh start RDPWindows
+```
 You should then open the VMs properties in `virt-manager` and ensure that under CPU `Copy host CPU configuration` is selected.
+
+Arch/Manjaro
+
+Options -> File -> Add connection... -> Hypervisor: QEMU/KVM
+check AutoConnect
+Generated URI: qemu:///system
+Connect
 
 Boot it up, install windows, and then [Install the virtual machine](#install-the-virtual-machine).
 
