@@ -8,7 +8,7 @@ sudo apt-get install -y virt-manager
 ```
 Arch/Linux
 ``` bash
-sudo pacman -S virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptablesdo
+sudo pacman -S virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables
 ```
 
 ## Download the Windows Professional and KVM VirtIO drivers
