@@ -180,6 +180,10 @@ You can refer to the [KVM](https://www.linux-kvm.org) documentation for specific
 ``` bash
 sudo apt-get install -y virt-manager
 ```
+Arch/Linux
+``` bash
+sudo pacman -S virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables
+```
 Now, copy your Windows ISO and VirtIO iso (links to download in the main guide) into the folder and update the `kvm/RDPWindows.xml` appropriately.
 
 Next, define a VM called RDPWindows from the sample XML file with:
