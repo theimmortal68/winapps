@@ -6,6 +6,10 @@ First up, you must install KVM and the Virtual Machine Manager. By installing `v
 ```bash
 sudo apt-get install -y virt-manager
 ```
+Arch/Linux
+``` bash
+sudo pacman -S freerdp
+```
 
 ## Download the Windows Professional and KVM VirtIO drivers
 You will need Windows 10 Professional (or Enterprise or Server) to run RDP apps, Windows 10 Home will not suffice. You will also need drivers for VirtIO to ensure the best performance and lowest overhead for your system. You can download these at the following links.
